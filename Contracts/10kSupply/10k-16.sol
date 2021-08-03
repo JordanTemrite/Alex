@@ -1057,7 +1057,7 @@ contract Token16 is ERC20, Ownable {
     }
     
     function recoverTokens(address _tokenAddress, uint256 _tokenAmount) public virtual onlyOwner {
-        Token15 recover = Token15(_tokenAddress);
+        Token16 recover = Token16(_tokenAddress);
         recover.transfer(owner(), _tokenAmount);
     }
     

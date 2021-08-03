@@ -1079,11 +1079,6 @@ contract Token14 is ERC20, Ownable {
         _burn(_burner, _amount);
     }
     
-    function recoverTokens(address _tokenAddress, uint256 _tokenAmount) public virtual onlyOwner {
-        Token14 recover = Token14(_tokenAddress);
-        recover.transfer(owner(), _tokenAmount);
-    }
-    
     modifier isValidMinter(address _minter) {
         require(mintPermissionAmount[_minter] != 0);
         _;

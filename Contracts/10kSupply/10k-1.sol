@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-// Contract Generation Services Provided By - https://deployfreetoken.com/
+// Contract Generation Services Provided By - https://deployfreetoken.com/ (Binance Smart Chain)
 
 pragma solidity ^0.8.0;
 

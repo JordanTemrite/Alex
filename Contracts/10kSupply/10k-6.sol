@@ -1046,7 +1046,7 @@ abstract contract Ownable is Context {
     }
 }
 
-contract Token3 is ERC20, Ownable {
+contract Token6 is ERC20, Ownable {
     using SafeMath for uint256;
     using SafeERC20 for IERC20;
     

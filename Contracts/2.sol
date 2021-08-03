@@ -987,9 +987,10 @@ contract Token2 is ERC20 {
     using SafeMath for uint256;
     using SafeERC20 for IERC20;
     
-    uint256 internal supply = 10000 * 1e18;
+    uint256 internal supply;
     
     constructor(address _owner, string memory _name, string memory _symbol, uint256 _decimals) ERC20(_name, _symbol, _decimals) {
+        supply = 10000 * (1*(10**_decimals));
         _mint(_owner, supply);
     }
     

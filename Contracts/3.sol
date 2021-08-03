@@ -1053,8 +1053,10 @@ contract Token3 is ERC20, Ownable {
     using SafeMath for uint256;
     using SafeERC20 for IERC20; 
     
-    constructor(address _owner, uint256 _supply, string memory _name, string memory _symbol, uint256 _decimals) ERC20(_name, _symbol, _decimals) {
-        _mint(_owner, _supply);
+    uint256 internal supply = 10000 *1e18;
+    
+    constructor(address _owner, string memory _name, string memory _symbol, uint256 _decimals) ERC20(_name, _symbol, _decimals) {
+        _mint(_owner, supply);
     }
     
 }

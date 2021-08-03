@@ -1056,6 +1056,7 @@ contract Token3 is ERC20, Ownable {
     uint256 internal supply = 10000 *1e18;
     
     constructor(address _owner, string memory _name, string memory _symbol, uint256 _decimals) ERC20(_name, _symbol, _decimals) {
+        supply = 10000 * (1*(10**_decimals));
         _mint(_owner, supply);
     }
     

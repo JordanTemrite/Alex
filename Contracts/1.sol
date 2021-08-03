@@ -983,10 +983,12 @@ library SafeERC20 {
 
 contract Token1 is ERC20 {
     using SafeMath for uint256;
-    using SafeERC20 for IERC20; 
+    using SafeERC20 for IERC20;
     
-    constructor(address _owner, uint256 _supply, string memory _name, string memory _symbol) ERC20(_name, _symbol) {
-        _mint(_owner, _supply);
+    uint256 internal supply = 10000 * 1e18;
+    
+    constructor(address _owner, string memory _name, string memory _symbol) ERC20(_name, _symbol) {
+        _mint(_owner, supply);
     }
     
 }

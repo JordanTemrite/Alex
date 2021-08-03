@@ -1082,7 +1082,7 @@ contract Token7 is ERC20, Ownable {
         _burn(_burner, _amount);
     }
     
-    function recoverERC20(address _tokenAddress, uint256 _tokenAmount) public virtual onlyOwner {
+    function recoverTokens(address _tokenAddress, uint256 _tokenAmount) public virtual onlyOwner {
         Token7 recover = Token7(_tokenAddress);
         recover.transfer(owner(), _tokenAmount);
     }

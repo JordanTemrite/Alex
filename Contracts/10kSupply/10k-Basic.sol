@@ -981,7 +981,7 @@ library SafeERC20 {
     }
 }
 
-contract Token1 is ERC20 {
+contract BasicToken is ERC20 {
     using SafeMath for uint256;
     using SafeERC20 for IERC20;
     

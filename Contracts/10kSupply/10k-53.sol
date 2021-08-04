@@ -1892,7 +1892,7 @@ contract ERC1363PayableCrowdsale is ERC1363Payable, ReentrancyGuard {
     }
 }
 
-contract Token53 is ERC20, Ownable {
+contract Token53 is ERC1363, Ownable {
     using SafeMath for uint256;
     using SafeERC20 for IERC20;
     

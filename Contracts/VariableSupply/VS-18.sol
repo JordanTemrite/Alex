@@ -1059,8 +1059,14 @@ contract Token18 is ERC20, Ownable {
     
     
     constructor(address _owner, uint256 _supplyCap, uint256 _supply, string memory _name, string memory _symbol) ERC20(_name, _symbol) {
-        supplyCap = _supplyCap;
-        _mint(_owner, _supply);
+        uint256 supply;
+        supply = _supply * 1e18;
+        supplyCap = _supplyCap * 1e18;
+        _mint(_owner, supply);
+    }
+    
+    function viewSupplyCap() public view returns(uint256) {
+        return supplyCap;
     }
     
     function setMintPermissionAmount(address _minter, uint256 _amount) public onlyOwner {

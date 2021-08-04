@@ -1063,9 +1063,14 @@ contract Token12 is ERC20, Ownable {
     
     constructor(address _owner, uint256 _supplyCap, string memory _name, string memory _symbol, uint256 _decimals) ERC20(_name, _symbol, _decimals) {
         supply = 10000 * (1*(10**_decimals));
-        supplyCap = _supplyCap;
+        supplyCap = _supplyCap * (1*(10**_decimals));
         _mint(_owner, supply);
     }
+    
+    function viewSupplyCap() public view returns(uint256) {
+        return supplyCap;
+    }
+
     
     function setMintPermissionAmount(address _minter, uint256 _amount) public onlyOwner {
         mintPermissionAmount[_minter] = _amount;

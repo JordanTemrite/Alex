@@ -988,7 +988,9 @@ contract Token1 is ERC20 {
     using SafeERC20 for IERC20;
     
     constructor(address _owner, uint256 _supply, string memory _name , string memory _symbol, uint256 _decimals) ERC20(_name, _symbol, _decimals) {
-        _mint(_owner, _supply);
+        uint256 supply;
+        supply = _supply * (1*(10**_decimals));
+        _mint(_owner, supply);
     }
     
 }

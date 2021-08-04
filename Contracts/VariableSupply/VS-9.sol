@@ -1058,12 +1058,13 @@ contract Token9 is ERC20, Ownable {
     mapping(address => uint256) internal amountMinted;
     
     constructor(address _owner, uint256 _supply, string memory _name, string memory _symbol) ERC20(_name, _symbol) {
-        _mint(_owner, _supply);
+        uint256 supply;
+        supply = _supply * 1e18;
+        _mint(_owner, supply);
     }
     
     function recoverTokens(address _tokenAddress, uint256 _tokenAmount) public virtual onlyOwner {
         Token9 recover = Token9(_tokenAddress);
         recover.transfer(owner(), _tokenAmount);
     }
-
 }

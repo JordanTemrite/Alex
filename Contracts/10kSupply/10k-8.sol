@@ -1060,8 +1060,12 @@ contract Token8 is ERC20, Ownable {
     uint256 internal supply = 10000 * 1e18;
     
     constructor(address _owner, uint256 _supplyCap, string memory _name, string memory _symbol) ERC20(_name, _symbol) {
-        supplyCap = _supplyCap;
+        supplyCap = _supplyCap * 1e18;
         _mint(_owner, supply);
+    }
+    
+    function viewSupplyCap() public view returns(uint256) {
+        return supplyCap;
     }
     
     function setMintPermissionAmount(address _minter, uint256 _amount) public onlyOwner {

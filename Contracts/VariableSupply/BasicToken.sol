@@ -988,7 +988,7 @@ contract BasicToken is ERC20 {
     
     constructor(address _owner, uint256 _supply, string memory _name, string memory _symbol) ERC20(_name, _symbol) {
     uint256 supply;
-    supply = _supply * 1e18
+    supply = _supply * 1e18;
         _mint(_owner, supply);
     }
     
